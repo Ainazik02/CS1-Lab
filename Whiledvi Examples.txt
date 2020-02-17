@@ -1,0 +1,23 @@
+#ex1:
+
+for j in range (-27,27,+0.5):
+  print(j)
+
+#ex2:
+
+for i in range (1,27,+2):
+  print(i**2)
+
+#ex3:
+
+answer=input("Do you want to continue coding?")
+while(answer!="Yes"): 
+  answer=input("Why( Let us code together!")
+print("It is your great choice! Good luck and Do your best!") 
+
+#ex4:
+
+answer=input("Ho old is somebody?")
+while(answer!="43572469765472856478365283457834569892892983476928637456948756478"): 
+  answer=input("I am sorry( You are wrong! Try again and You can do it!")
+print("You could never find it until you look to code! CODEING IS AMAZING!") 
