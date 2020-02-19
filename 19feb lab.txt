@@ -1,0 +1,73 @@
+ex1)
+
+for i in range(1,100):
+ print(i)
+
+ex2)
+
+answer=int(input("Write your lovely numbers:"))
+list1=[]
+list1.append(answer)
+print(list1)
+
+
+ex3)
+for i in range(1,100):
+ print(i,"X",14,"=",i*14)
+
+
+ex4)
+
+for i in range(1,100):
+ print(i,"-",i**2)
+
+
+ex5)
+
+for i in range(2,101,+2):
+  print(i)
+for j in range(1,101,+2):
+  print(j)
+ 
+
+ex6)
+
+print("Numbers divisible by 4:")
+for i in range(1,101):
+  if i%4==0:
+    print(i)
+print("_________________________")    
+print("Numbers divisible by 6:")
+for i in range(1,101):
+  if i%6==0:
+    print(i)
+print("_________________________")   
+print("Numbers divisible by 8:")
+for i in range(1,101):
+  if i%8==0:
+    print(i)
+print("_________________________") 
+print("Numbers divisible by 10:")  
+for i in range(1,101):
+  if i%10==0:
+    print(i)
+print("_________________________")  
+print("Numbers divisible by 3:") 
+for i in range(1,101):
+  if i%3==0:
+    print(i) 
+print("_________________________") 
+print("Numbers divisible by 5:")  
+for i in range(1,101):
+  if i%5==0:
+    print(i)
+print("_________________________")   
+print("Numbers divisible by 7:")
+for i in range(1,101):
+  if i%7==0:
+    print(i)     
+print("_________________________")  
+print("Numbers divisible by 9:") 
+for i in range(1,101):
+  if i%9==0:
+    print(i)    
