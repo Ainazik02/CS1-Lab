@@ -1,0 +1,65 @@
+ex4)
+
+x=4
+y=3
+def add(x,y):
+  return x+y
+def multiply(x,y):
+  return x*y 
+result=(x+y)*(x+y)
+print(result)
+
+
+
+ex5)
+
+number1=x=input("Write random number x:")
+number2=y=input("Write random number y:")
+  
+print("After Swapping: x =", y, " y =", x); 
+
+
+
+ex1)
+
+number = int(input('Enter any number: '))
+if number % 2 == 0:
+  print(number, "is EVEN")
+else:
+  print(number, "is ODD")
+if number%4==0:
+  print(number,"is also divisible by 4")
+else:
+  print(number,"is not divisible by 4")
+
+num1=int(input("Enter first number:"))
+num2=int(input("Enter second number:"))
+
+if num1%num2==0:
+  print("Good numbers!")
+else:
+  print("These numbers are not divisible by each other(")  
+
+
+ex2)
+
+number=int(input("Write random number:"))
+if (number<10):
+  print("I need another number:")
+elif (number<20):
+  print("Thank u! Now write a string:")
+elif (number<100):
+  print("Your choice is between 20-100")    
+else:
+  print("Just Practicing")
+
+
+ex3)
+
+character = input("Enter a character: ")
+
+if(character=='A' or character=='a' or character=='E' or character =='e' or character=='I'
+ or character=='i' or character=='O' or character=='o' or character=='U' or character=='u'):
+    print("You won")
+else:
+    print("You lost")
