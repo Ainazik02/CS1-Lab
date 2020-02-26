@@ -1,0 +1,51 @@
+ex1)
+
+a=int(input("a="))
+b=int(input("b="))
+c=int(input("c="))
+
+if a==b or a==c or b==c:
+  print("Some numbers you entered are equal)")
+else:
+  print("Some numbers you entered are not equal(")
+
+
+ex2)
+
+import math
+a=int(input("leg a="))
+b=int(input("leg b="))
+print((math.sqrt(a**2+b**2)))
+
+
+ex3)
+
+word1=input('write your name:')
+word2=input('write your surname:')
+print(word2,"  ",word1)
+
+
+ex4)
+
+n=int(input('write a number:'))
+print(n+n**2+n**3)
+
+
+ex5)
+
+a=(int(input("a=")))
+b=(int(input("b=")))
+c=(int(input("c=")))
+if a<b<c:
+  print(b)
+if b<a<c:
+  print(a)
+if c<b<a:
+  print(b)
+if a<c<b:
+  print(c)
+if b<c<a:
+  print(c)
+if c<a<b:
+  print(a)
+    
