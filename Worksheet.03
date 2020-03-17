@@ -1,0 +1,53 @@
+Ex1)
+
+a=input("a=")
+b=input("b=")
+c=input("c=")
+def max(a,b,c):
+  if (a<b) and (c<b):
+    max=b
+  elif(b<a) and (c<a):
+    max=a
+  elif(c>b) and (a<c):
+    max=c
+
+  return max    
+print(max(a,b,c))
+
+Ex2)
+
+N=[8, 2, 3, -1, 7]
+def mult(N):
+  result=1
+  for x in N:
+    result*= x
+  return result
+print(mult(N))  
+
+Ex3)
+
+number=19
+def check_prime(number): 
+  for x in range(2,number):
+    if (number%x!=0):
+      return True
+    elif(number==1):
+      return False   
+    else:
+      return False     
+print(check_prime(number))
+
+Ex4)
+
+number=10
+def check_perfect(number): 
+  sum=0
+  for x in range(1,number):
+    if number%x==0:
+      sum+=x
+  return sum==x      
+print(check_perfect(number))
+
+Ex5) 
+
+Will be continued....
