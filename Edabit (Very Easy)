@@ -50,3 +50,14 @@ print(to_int("37"))
 def to_str(num):
   return str(num)
 print(to_str(9)) #not rinting as a string with qutation marks
+
+print("___________________________________________________________________________")
+
+def find_perimeter(height, width):
+	perimeter=(height+width)*2
+	return perimeter
+print(find_perimeter(6,7 ))  
+
+print("___________________________________________________________________________")
+
+
