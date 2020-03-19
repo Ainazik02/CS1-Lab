@@ -1,0 +1,52 @@
+def hello():
+  return "hello edabot.com"
+print(hello())  
+
+print("___________________________________________________________________________")
+
+def get_first_value(number_list):
+	return number_list[0]
+print(get_first_value([1, 2, 3]))
+
+print("___________________________________________________________________________")
+
+def convert(minutes):
+  return minutes*60
+print(convert(3))	
+
+print("___________________________________________________________________________")
+
+def next_edge(side1, side2):
+  return (side1+side2)-1
+print(next_edge(8,10))
+
+print("___________________________________________________________________________")
+
+def how_many_seconds(hours):
+  return hours*3600
+print(how_many_seconds(2)) 
+
+print("___________________________________________________________________________")
+
+def calculate_exponent(num, exp):
+  return num**exp
+print(calculate_exponent(5,5))
+
+print("___________________________________________________________________________")
+
+def less_than_or_equal_to_zero(num):
+ if num<=0:
+   return True
+ else:
+   return False
+print(less_than_or_equal_to_zero(5))
+
+print("___________________________________________________________________________with problem")
+
+def to_int(txt):
+  return int(txt)
+print(to_int("37"))	
+
+def to_str(num):
+  return str(num)
+print(to_str(9)) #not rinting as a string with qutation marks
