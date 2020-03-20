@@ -1,0 +1,95 @@
+#Ainazik Kamaldinova
+
+cost_TV=0
+quantity_TV=0 
+cost_DVD=0
+quantity_DVD=0
+cost_controller=0
+quantity_controller=0
+cost_console=0
+quantity_console=0
+cost_phone=0
+quantity_phone=0
+TV=0
+DVD=0
+Controller=0
+Console=0
+Phone=0
+unit_price=0
+total_price=0
+subtotal=0
+tax=0
+tax2=0
+total_price=0
+totalprice=0
+totalprice2=0
+
+
+def main():
+  acceptUserInput()
+  unit_price(cost_TV,quantity_TV ,cost_DVD ,quantity_DVD,cost_controller, quantity_controller,cost_console,quantity_console,cost_phone,quantity_phone)
+  total_price(cost_TV,quantity_TV ,cost_DVD ,quantity_DVD,cost_controller, quantity_controller,cost_console,quantity_console,cost_phone,quantity_phone) 
+  totalPrice(subtotal,tax,tax2,totalprice,totalprice2)
+
+def acceptUserInput():
+  global cost_TV,quantity_TV ,cost_DVD ,quantity_DVD,cost_controller, quantity_controller,cost_console,quantity_console,cost_phone,quantity_phone
+  cost_TV = float(input("What is the unit price of a TV?:    "))
+  quantity_TV = float(input("How Many TVs Were Sold?  :     "))
+  cost_DVD = float(input("What is the unit price of a DVD player? :  "))
+  quantity_DVD = float(input("How Many DVD Players Were Sold?  :        "))
+  cost_controller=float(input("What is the unit price of a Game Controller?:    "))
+  quantity_controller=float(input("How Many Game Controllers Were Sold?    :        "))
+  cost_console=float(input("What is the unit price of a Game Console?:    "))
+  quantity_console=float(input("How Many Game Consoles Were Sold?    :        "))
+  cost_phone=float(input("What is the unit price of a Cell Phone?:    "))
+  quantity_phone=float(input("How Many Cell Phones Were Sold?    :        "))
+
+def unit_price(cost_TV,quantity_TV,cost_DVD ,quantity_DVD,cost_controller, quantity_controller,cost_console,quantity_console,cost_phone,quantity_phone):
+  TV = cost_TV
+  DVD=cost_DVD
+  Controller=cost_controller
+  Console=cost_console
+  Phone=cost_phone
+  print("")
+  
+
+def total_price(cost_TV,quantity_TV,cost_DVD ,quantity_DVD,cost_controller, quantity_controller,cost_console,quantity_console,cost_phone,quantity_phone): 
+  TV = cost_TV*quantity_TV
+  DVD=cost_DVD*quantity_DVD
+  Controller=cost_controller*quantity_controller
+  Console=cost_console*quantity_console
+  Phone=cost_phone*quantity_phone 
+  
+  print(" ")
+
+  print("%-40s %-20s %15s %20s" %("QTY","DESCRPTION","UNIT PRICE","TOTAL PRICE"))
+  print("_"*95)
+  print("%-40s %-20s %13.2f %12s %1.2f" %(quantity_TV,"TV",cost_TV,"$",TV))
+  print("%-40s %-20s %13.2f %12s %1.2f" %(quantity_DVD,"DVD Player",cost_DVD,"$",DVD))
+  print("%-40s %-20s %13.2f %12s %1.2f" %(quantity_controller,"Game Controller", cost_controller,"$",Controller))
+  print("%-40s %-20s %13.2f %12s %1.2f" %(quantity_console,"Game Console", cost_console,"$",Console))
+  print("%-40s %-20s %13.2f %12s %1.2f" %(quantity_phone,"Cell phone", cost_phone,"$",Phone))
+  print("%95s" %("_"*15))
+
+  return total_price
+  
+
+
+
+def totalPrice(subtotal,tax,tax2,totalprice,totalprice2):
+  
+  subtotal = (cost_TV*quantity_TV)+(cost_DVD*quantity_DVD)+(cost_controller*quantity_controller)+(cost_console*quantity_console)+(cost_phone*quantity_phone)
+  tax = (subtotal * 8.25)/100
+  tax2=tax+ (subtotal * 8.25)/100
+  totalprice =subtotal+tax
+  totalprice2 =subtotal+tax+tax2
+  finish=input("Will you pay with card or cash?")  
+  if (finish=="cash" or finish=="Cash"):
+    print("                                                                    ","%-12s %12.2f" %("Subtotal",subtotal))
+    print("                                                                    ","%-12s %12.2f" %("Tax",tax))
+    print("                                                                    ","%-12s %7s %1.2f" %("TOTAL","$",totalprice))
+  else:
+    print("                                                                    ","%-12s %12.2f" %("Subtotal",subtotal))
+    print("                                                                    ","%-12s %12.2f" %("Tax",tax2))
+    print("                                                                    ","%-12s %7s %1.2f" %("TOTAL","$",totalprice2))
+main()
