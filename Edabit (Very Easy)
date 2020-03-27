@@ -202,4 +202,61 @@ def is_plural(word):
 
 print("\n") 
 
+def squared(b):
+	return b**2
 
+def concat_name(first_name, last_name):
+	return last_name+", "+first_name
+
+def divisible(num):
+ if num%100==0:
+  return True
+ return False
+
+def find_smallest_num(lst):
+  return min(lst)
+
+def get_container(product):
+	matches = {
+	"Bread" : "bag",
+	"Milk" : "bottle",
+	"Beer" : "bottle",
+	"Eggs" : "carton",
+	"Cerials" : None,
+	"Candy" : "plastic",
+	"Cheese" : None
+	}
+	return matches[product]	 
+print(get_container("Cheese"))  
+
+def has_spaces(txt):
+ if " " in txt:
+	 return True
+ return False 
+
+def count_true(lst):
+ return lst.count(True)
+
+def num_to_dashes(num):
+ return "-"*num
+ 
+def ctoa(char):
+ return ord(char) 
+   
+def programmers(one, two, three):
+ lst=(one, two, three)
+ return max(lst)-min(lst)
+
+def check(lst, el):
+ if el in lst:
+  return True
+ return False
+
+def has_key(dictionary, key):
+ if key in dictionary:
+  return True 
+ return False	
+
+def min_max(nums):
+ return [min(nums),max(nums)]      
+print(min_max([2,4,677,54,3]))
