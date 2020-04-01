@@ -1,0 +1,7 @@
+Ex1)
+
+number=input("Number=")
+def count_digit(number):
+  return len(number)
+print(count_digit(number))
+
