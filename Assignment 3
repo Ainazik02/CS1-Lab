@@ -1,0 +1,79 @@
+def main():
+  num1 = 0
+  num2 = 0
+  num3 = 0
+  num4 = 0
+  num5 = 0
+
+  while True:
+    num1=input_crtiteria()
+    num2=input_crtiteria()
+    num3=input_crtiteria()
+    num4=input_crtiteria()
+    num5=input_crtiteria()
+    user_list=[num1,num2,num3,num4,num5]
+    
+    menu()
+
+    answer = int(input("Enter a number to know the result (from 1 to 5):  "))
+    if answer==1:
+      Smallest_number(user_list)
+
+    elif answer==2:
+      Largest_number(user_list)
+
+    elif answer==3:
+      Sum_numbers(user_list)
+
+    elif answer==4:
+      Avarage_numbers(user_list)
+
+    elif answer==5:
+      break           
+
+def Smallest_number(user_list):
+  print("The smallest number in a list is:  " , min(user_list))
+  print("")
+  print("")
+
+def Largest_number(user_list):
+  print("The largest number in a list is:  " , max(user_list))
+  print("")
+  print("")
+
+def Sum_numbers(user_list):
+  print("The sum of numbers in a list is:  " , sum(user_list))
+  print("")
+  print("")
+
+def Avarage_numbers(user_list):
+  print("The avarage of numbers in a list is:  ",  (sum(user_list)) /(len(user_list)))
+  print("")
+  print("")
+  
+
+def input_crtiteria():
+  numbers  = int(input("Enter number x in range 25 =< x <=225:  "))
+  while(not(numbers >= 25 and numbers <= 225)):
+    print("Error occured, try again!")
+    numbers= int(input("Enter number x in range 25 =< x <=225:  "))
+  return numbers
+
+
+def menu():
+  print("")
+  print(" ~~~~~~~~~~~~~~~")
+  
+  print("  Operations")  
+  print(" ~~~~~~~~~~~~~~~")
+  print("")
+  print(" 1.  Smallest number")
+  print(" 2.  Largest number")
+  print(" 3.  Sum of numbers")
+  print(" 4.  Average of numbers") 
+  print(" 5.  End")
+  print("")         
+
+
+main()    
+
