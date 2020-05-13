@@ -1,0 +1,150 @@
+def main():
+  while True:
+    quiz_score = input_for_quizScore()
+    prog_assign1 = input_for_assignment_1()
+    prog_assign2 = input_for_assignment_2()
+    prog_assign3 = input_for_assignment_3()
+    prog_assign4 = input_for_assignment_4()
+    prog_assign5 = input_for_assignment_5()
+    prog_assignment = [prog_assign1, prog_assign2, prog_assign3,prog_assign4, prog_assign5]
+
+    lab_1 = input_for_lab_1()
+    lab_2 = input_for_lab_2()
+    labs = [lab_1, lab_2]
+
+    midterm = input_for_midterm()
+    anticipated_grade = input_for_grade()
+    quiz_and_assignment = (quiz_dropped_lowest_average(quiz_score) + programming_assignment_average(prog_assignment))/2
+    midterm_x2 = midterm * 2
+ 
+    lab_last_average = lab_average(lab_1, lab_2)
+    print("=======================================================")
+    print('Current quiz average after dropping lowest score is:', quiz_dropped_lowest_average(quiz_score), '%')
+    print("Current programming assignment average is:", programming_assignment_average(prog_assignment),'%')
+    print('Current labs average is:', lab_average(lab_1, lab_2),'%')
+    print('Currently, the grade score for the course is:',current_grade(quiz_and_assignment,lab_last_average,midterm_x2),'%')
+    print('The student will get', full_onFinal(quiz_score, prog_assignment,lab_1, lab_2, midterm_x2), 'out of 100 if the student receives 100% on final.')
+    print('To receive the anticipated grade the student should receive', should_receive_on_final(quiz_score, prog_assignment,lab_1, lab_2, midterm_x2),'%', ' on final exam, which means the student should receive', '93.5', 'out of 75 to get an', anticipated_grade, 'grade')
+    print("")  
+    print("")
+    answer = input("Do you want to re-enter all the scores for another student?")
+    if answer == 'yes':
+      return main()
+    else:
+      break
+
+
+def input_for_quizScore():
+  quiz_score = [int(x) for x in input("Please enter quiz scores as a list(5 valid scores with space between them):").split()]
+  for a in quiz_score:  
+    if ((a < 0) or (a > 10) or (len(quiz_score) < 5) or (len(quiz_score) > 5)):
+      print("Error, please try again!")
+      return input_for_quizScore()
+
+  return quiz_score
+
+def input_for_assignment_1():
+  prog_assign1 = int(input("Please enter score for programming assignment 1 (0-50): "))
+  while (not (prog_assign1 >= 0 and prog_assign1 <= 50)):
+    print("Error, please try again!")
+    prog_assign1 = int(input("Please enter score for programming assignment 1 (0-50): "))
+  return prog_assign1
+
+
+def input_for_assignment_2():
+  prog_assign2 = int(input("Please enter score for programming assignment 2 (0-75): "))
+  while (not (prog_assign2 >= 0 and prog_assign2 <= 75)):
+    print("Error, please try again!")
+    prog_assign2 = int(input("Please enter score for programming assignment 2 (0-75): "))
+  return prog_assign2
+
+
+def input_for_assignment_3():
+  prog_assign3 = int(input("Please enter score for programming assignment 3 (0-100): "))
+  while (not (prog_assign3 >= 0 and prog_assign3 <= 100)):
+    print("Error, please try again!")
+    prog_assign3 = int(input("Please enter score for programming assignment 3 (0-100): "))
+  return prog_assign3
+
+
+def input_for_assignment_4():
+  prog_assign4 = int(input("Please enter score for programming assignment 4 (0-125): "))
+  while (not (prog_assign4 >= 0 and prog_assign4 <= 125)):
+    print("Error, please try again!")
+    prog_assign4 = int(input("Please enter score for programming assignment 4 (0-125): "))
+  return prog_assign4
+
+
+def input_for_assignment_5():
+  prog_assign5 = int(input("Please enter score for programming assignment 5 (0-150): "))
+  while (not (prog_assign5 >= 0 and prog_assign5 <= 150)):
+    print("Error, please try again!")
+    prog_assign5 = int(input("Please enter score for programming assignment 5 (0-150): "))
+  return prog_assign5
+
+
+def input_for_lab_1():
+  lab_1 = int(input("Please enter score for lab 1 (0-125): "))
+  while (not (lab_1 <= 125)):
+    print("Error, please try again!")
+    lab_1 = int(input("Please enter score for lab 1 (0-125): "))
+  return lab_1
+
+def input_for_lab_2():
+  lab_2 = int(input("Please enter score for lab 2 (0-150): "))
+  while (not (lab_2 <= 150)):
+    print("Error, please try again!")
+    lab_2 = int(input("Please enter score for lab 2 (0-150): "))
+  return lab_2
+
+def input_for_midterm ():
+  midterm = int(input("Please enter score for midterm (0-50): "))
+  while midterm > 50 or midterm < 0:
+    print("Error, please try again!")
+    midterm = int(input("Please enter score for midterm (0-50): "))
+  return midterm
+
+def input_for_grade():
+  grade = input("What grade do you wish to receive (A,B,C)? ")
+  while (not (grade == 'A' or grade == 'B' or grade == 'C')):
+    print("Error, please try again!")
+    grade = input("What grade do you wish to receive (A,B,C)? ")
+  return grade
+
+def quiz_dropped_lowest_average(quiz):
+  return ((sum(quiz) - min(quiz)) *10) // (max(len(quiz),1) - 1)
+
+def programming_assignment_average(prog_assignment):
+  return (sum(prog_assignment)) // max(len(prog_assignment), 1)
+
+def lab_average(lab_1, lab_2):
+  return int(((lab_1 + lab_2) / (125+150)) * 100)
+
+def current_grade(quiz_and_assignment,lab_last_average,midterm_x2):
+  a_g_per = (quiz_and_assignment/100)*20 
+  lab_per = (lab_last_average / 100)*20
+  midterm_per =(midterm_x2/100)*30
+  per_sub = a_g_per + lab_per + midterm_per
+  last = (per_sub * 100)/70
+  return "%.2f" % last
+ 
+def full_onFinal(quiz, prog_assignment,lab_1, lab_2, midterm_x2):
+  assigment_quiz_p = ((((quiz_dropped_lowest_average(quiz) + programming_assignment_average(prog_assignment))/ 2)/100)*20)
+  lab_p = (lab_average(lab_1,lab_2) / 100) *20
+  midterm_p = (midterm_x2 / 100* 30)
+  final = 100
+  final_p = (final / 100) *30
+  return assigment_quiz_p + lab_p + midterm_p + final_p
+  
+def should_receive_on_final(quiz, prog_assignment,lab_1, lab_2, midterm_x2):
+  different = 96 - full_onFinal(quiz, prog_assignment,lab_1, lab_2, midterm_x2)
+  final_grade_guess = 30 + different
+  guess_percent = (final_grade_guess * 100)/30
+  return "%.2f" % guess_percent
+  
+def out_of_75():
+  a = (should_receive_on_final *75)/100
+  return a
+  
+ 
+main()
