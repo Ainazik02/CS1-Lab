@@ -1,0 +1,74 @@
+#Ex1
+
+number=input("Number=")
+def count_digit(number):
+  return len(number)
+print(count_digit(number))
+
+#Ex2
+
+
+num1 = int(input())
+num2 = int(input())
+sum1 = 0
+sum2 = 0
+for i in range(1,num1):
+  if(num1 % i == 0):
+    sum1 = sum1 + i
+    for i in range(1,num2):
+      if(num2 % i == 0):
+        sum2 = sum2 + i
+        if(sum1 == num1 and sum2 == num2):
+           print("Friendly Pair")
+        else:
+	        print("Not Friendly Pair")          
+
+#EX3
+
+n=int(input("Enter number of rows: "))
+a=[]
+for i in range(n):
+    a.append([])
+    a[i].append(1)
+    for j in range(1,i):
+        a[i].append(a[i-1][j-1]+a[i-1][j])
+        if(n!=0):
+            a[i].append(1)
+            for i in range(n):
+                print("" "*(n-i),end=" ",sep=" "")
+                for j in range(0,i+1):
+                    print("{0:6}".format(a[i][j]),end=" ",sep=" ")
+print()          
+
+#EX4
+
+import math
+start = int(input("Enter start value : "))
+end = int(input("Enter end value : "))
+result = 0
+n = 0
+for i in range(start+1 ,end,1):
+    temp2 = i
+    temp1 = i
+
+    while (temp1 != 0):
+        temp1 = int(temp1/10)
+        n = n + 1
+
+        while (temp2 != 0):
+            remainder = temp2 % 10
+            result = result + math.pow(remainder, n)
+            temp2 = int(temp2/10)
+
+            if (result == i):
+                print(i," ")
+
+                n = 0
+                result = 0
+
+#EX5
+
+num = int(input())
+total = 0
+total = num * (num - 1) / 2 
+print(int(total))                
